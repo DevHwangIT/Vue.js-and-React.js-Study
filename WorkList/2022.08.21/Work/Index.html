@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="//unpkg.com/alpinejs" defer="defer"></script>
+        <div x-data="{ open: false}">
+            <button x-on:click="open = !open">Show Cat!</button>
+            <div x-show="open" x-transition="x-transition">
+
+                <h2>고 양 희 씨 </h2>
+                <img src="cat.png" with="200px" height="200px"><br>
+
+                <div>
+                    <h4>
+                        이름 : 고양희씨<br>
+                        나이 : 5살
+                        <br>
+                        특징 : 귀여움!
+                        <br>
+                    </h4>
+
+                    <input type="button" onclick="alert('확인')" value="고양희씨 보러 오실거죠?"/>
+                </div>
+            </div>
+
+        </body>
+    </html>

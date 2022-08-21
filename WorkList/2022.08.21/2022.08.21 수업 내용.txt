@@ -1,0 +1,73 @@
+
+Vue.js와 React.js를 활용한 프론트 엔드 웹 개발 실무과정
+
+----------------------------------------------------------------------
+
+용세중 강사님
+010 - 3156 - 1175
+sjydevil@gmail.com
+
+----------------------------------------------------------------------
+
+- 수업 내용 2022.08.21 (일)
+
+- Vue에서 알아야 할 4가지
+
+  1. Vue 인스턴스
+    - edtmc^2w life cycle
+
+  2. Vue 컴포넌트
+    - pdtmc^2w life cycle
+    - global 컴포넌트
+    - local 컴포넌트  
+    - file 컴포넌트
+
+  3. Vue 지시자
+
+    v- 시작
+  
+    데이터를 화면에 결합
+  
+    데이터 바인딩
+  
+      단방향
+    
+      양방향
+ 
+  4. Vue 라우팅
+ 
+    a 태그의 anchor 기능
+  
+Setup
+  
+  - Chrome Web Store
+  
+      Vue.js DevTools
+
+  - Visual Studio Code Plug-In
+
+      htmltagwrap
+
+      Auto Rename Tag
+
+      Live Server
+
+오전에 한 일
+
+  Git 초반 설정하고 CRUD... 이렇게 용어로 표현할 줄이야... 굳이?...
+
+  오후에는 자바스크립트 내용 강의?
+
+오후에 한 일
+
+  자바스크립트 관련 내용 간단한거 설명하고
+
+  Array 메소드들 써보면서 연습함.
+
+  객체를 Array 메소드 쓰는 법도 연습함.
+
+  debugger를 쓰면 명령어 등도 있음.
+
+  ES란 ECMA Script 즉, JavaScript임.
+
+  babel로 ES2015랑 ES5가 변환되는 것 확인함.
