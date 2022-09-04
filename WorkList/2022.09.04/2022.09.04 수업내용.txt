@@ -1,0 +1,67 @@
+
+Vue.js와 React.js를 활용한 프론트 엔드 웹 개발 실무과정
+
+----------------------------------------------------------------------
+
+용세중 강사
+010 - 3156 - 1175
+sjydevil@gmail.com
+
+----------------------------------------------------------------------
+
+- 수업 내용 2022.09.04 (일)
+
+오전에 한 일
+
+Style 사용
+<style></style>는 전역
+<style scoped></style>는 지역
+
+지난 수업에서 다 못배운 지시자 일부 진행예정 v-on
+
+    v-bind html 속성값을 변하게 거는 것?
+
+    v-on 버튼 이벤트 등 이벤트 관련된 속성을 거는 것?
+
+    v-for 뭔가 반복적인 행위에 대한 for과 비슷한...? 
+
+정확하게 Vue에 대한 개념이 애매모호하다.
+
+Html 속성은 v-bind 이벤트는 v-on으로 붙인다.
+v-model과 v-bind 차이?
+
+                v-on:keyup.esc="$emit('close')"
+                v-on:close="showModal = false"> 
+
+                아래와 같은 구문임
+
+                v-on:keyup.esc='close';
+                close()
+                {
+                    this.$data.showModal="false";
+                }
+
+Chapter 29.01    ->    v-bind:class="checked(todoItem.done)" 와 같이 함수를 호출할 수 도 있음.
+
+오후에 한 일
+
+Chapter 29.01    ->  버블링 관련 내용 설명
+    
+    event.stopPropagation();
+    event.preventDefault();
+
+컴포넌트에 대한 내용
+
+    -> 로컬컴포넌트에 대해서는 더이상 하지않음 ( 어차피 사용도 안함 ) 파일컴포넌트만 설명
+
+vue30컴포넌트실습.html 파일 참조하기
+
+style scoped는 해당 컴포넌트 안에서만 동작함. 다른 컴포넌트에서는 동작하지 않음.
+
+다음주부터는 Vuex에 관한 내용을 수업할 예정임.
+
+$emit('이벤트명', 매개변수)를 통해서 넘길수 있다?
+
+Vue.js-and-React.js-Study\Study Resources\LectureMaterial\Vuejs\vue30컴포넌트실습
+
+29번 예제를 다음 수업 4,5,6 교시에 진행할 예정임.
