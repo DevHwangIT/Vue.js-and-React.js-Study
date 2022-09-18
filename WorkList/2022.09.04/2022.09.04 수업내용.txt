@@ -6,6 +6,7 @@ Vue.js와 React.js를 활용한 프론트 엔드 웹 개발 실무과정
 용세중 강사
 010 - 3156 - 1175
 sjydevil@gmail.com
+https://www.youtube.com/playlist?list=PLI9HGNfZmkoiUNfhJ2nv1TuEaCrxD5zh8
 
 ----------------------------------------------------------------------
 
@@ -23,7 +24,7 @@ Style 사용
 
     v-on 버튼 이벤트 등 이벤트 관련된 속성을 거는 것?
 
-    v-for 뭔가 반복적인 행위에 대한 for과 비슷한...? 
+    v-for 뭔가 반복적인 행위에 대한 for과 비슷한...?
 
 정확하게 Vue에 대한 개념이 애매모호하다.
 
@@ -31,7 +32,7 @@ Html 속성은 v-bind 이벤트는 v-on으로 붙인다.
 v-model과 v-bind 차이?
 
                 v-on:keyup.esc="$emit('close')"
-                v-on:close="showModal = false"> 
+                v-on:close="showModal = false">
 
                 아래와 같은 구문임
 
@@ -46,7 +47,7 @@ Chapter 29.01    ->    v-bind:class="checked(todoItem.done)" 와 같이 함수�
 오후에 한 일
 
 Chapter 29.01    ->  버블링 관련 내용 설명
-    
+
     event.stopPropagation();
     event.preventDefault();
 

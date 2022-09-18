@@ -40,7 +40,7 @@
     "html.format.endWithNewline": true,
     "html.format.indentInnerHtml": true,
     "html.suggest.html5": true,
-    "auto-close-tag.activationOnLanguage": [
+    "auto-close-tag.activationOnLanguage": [    
         "xml",
         "php",
         "blade",

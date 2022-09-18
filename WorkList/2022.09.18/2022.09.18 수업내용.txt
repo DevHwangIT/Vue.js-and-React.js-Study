@@ -1,0 +1,35 @@
+
+Vue.js와 React.js를 활용한 프론트 엔드 웹 개발 실무과정
+
+----------------------------------------------------------------------
+
+용세중 강사
+010 - 3156 - 1175
+sjydevil@gmail.com
+https://www.youtube.com/playlist?list=PLI9HGNfZmkoiUNfhJ2nv1TuEaCrxD5zh8
+----------------------------------------------------------------------
+
+- 수업 내용 2022.09.18 (일)
+
+오전에 한 일
+
+Mac Book Setting 하느라, 초반 부분 1교시정도 수업 진도 놓쳤음. 향후 보강 필요함
+
+ref를 사용하는 이유 Dom과 virtual Dom의 접근을 위해서?
+
+this.$ref를 사용.
+
+컴포넌트 스타일 방식 비교 - 전역, Scope, module 방식이 있다. Scope와 Module 방식은 해당 영역안에서만 사용 가능하다.
+
+Vue에서 CSS Style 적용 범위를 제한한다는 내용.
+
+4-02. pretter Setting -> npm run lint 일괄적으로 코드 라인이나 기타를 처리해준다?
+
+
+오후에 한 일
+
+vuex란 뭔가? vuex를 사용하는 이유에 대해서 설명
+
+vuex 구성 요소에 대한 설명
+
+

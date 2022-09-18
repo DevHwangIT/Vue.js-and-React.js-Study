@@ -20,10 +20,18 @@ button {
         <!-- TodoHeader -->
 
         <!-- TodoInput -->
+        <TodoFooter v-on:addTodo="addTodo"></TodoFooter>>
 
         <!-- TodoList -->
 
         <!-- TodoFooter -->
+        <TodoFooter v-on:clearAll="clearAll"></TodoFooter>>
     </div>
 </template>
 
+<script>
+import TodoFooter from '../TodoFooter.vue';
+import TodoHeader from '../TodoHeader.vue';
+import TodoInput from '../TodoInput.vue';
+import TodoList from '../TodoList.vue';
+</script>

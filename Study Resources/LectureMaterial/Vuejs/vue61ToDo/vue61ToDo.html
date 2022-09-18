@@ -110,19 +110,19 @@
             4.4 TodoFooter 컴포넌트 버튼 클릭시 이벤트 발신 기능을 추가한다.
                 this.$emit('clear-all', null);
 
-        5. TodoInput 컴포넌트 만들고 컴포넌트 등록하고 태그 작성한다.
-            5.1 TodoInput 컴포넌트 만든다.
-            5.2 TodoInput 컴포넌트를 인스턴스에 등록한다.
-            5.3 TodoInput 컴포넌트 태그를 Todo 컴포넌트의 템플릿에 등록한다.
-            5.4 TodoInput 컴포넌트 버튼 클릭시 이벤트 발신 기능을 추가한다.
-                this.$emit('add-todo', 넘길값);
-            5.5 TodoInput 컴포넌트의 input 태그에 값을 초기화
+        5. TodoList 컴포넌트 만들고 컴포넌트 등록하고 태그 작성한다.
+            5.1 TodoList 컴포넌트 만든다.
+            5.2 TodoList 컴포넌트를 인스턴스에 등록한다.
+            5.3 TodoList 컴포넌트 태그를 Todo 컴포넌트의 템플릿에 등록한다.
+            5.4 TodoList 컴포넌트 이벤트 발신 기능을 작성한다
 
-        6. TodoList 컴포넌트 만들고 컴포넌트 등록하고 태그 작성한다.
-            6.1 TodoList 컴포넌트 만든다.
-            6.2 TodoList 컴포넌트를 인스턴스에 등록한다.
-            6.3 TodoList 컴포넌트 태그를 Todo 컴포넌트의 템플릿에 등록한다.
-            6.4 TodoList 컴포넌트 이벤트 발신 기능을 작성한다.
+        6. TodoInput 컴포넌트 만들고 컴포넌트 등록하고 태그 작성한다.
+            6.1 TodoInput 컴포넌트 만든다.
+            6.2 TodoInput 컴포넌트를 인스턴스에 등록한다.
+            6.3 TodoInput 컴포넌트 태그를 Todo 컴포넌트의 템플릿에 등록한다.
+            6.4 TodoInput 컴포넌트 버튼 클릭시 이벤트 발신 기능을 추가한다.
+                this.$emit('add-todo', 넘길값);
+            5.5 TodoInput 컴포넌트의 input 태그에 값을 초기화.
 
     ##################################
     # Vue-CLI 학습하기
@@ -443,8 +443,9 @@
         # 폴더 만들기
         $ mkdir -p src/components/todo/
 
-        $ touch src/views/TodoView.vue \
-                src/components/todo/TodoHeader.vue \
+        # 컴포넌트 파일 만들기
+        $ touch src/views/TodoView.vue
+        $ touch src/components/todo/TodoHeader.vue \
                 src/components/todo/TodoInput.vue \
                 src/components/todo/TodoList.vue \
                 src/components/todo/TodoFooter.vue
@@ -504,6 +505,8 @@
             vue61ToDo/1차/TodoView.vue 내용을 복사하여 붙여넣기
 
         step 7-2. src/components/todo/TodoHeader.vue 기능완성
+
+
         step 7-2-1. src/components/todo/TodoHeader.vue 에 style 과 html 추가
             vue61ToDo/1차/TodoHeader.vue 내용을 복사하여 붙여넣기
 
@@ -537,15 +540,18 @@
 
 
         step 7-3. src/components/todo/TodoFooter.vue  만들기
+
         step 7-3-1. src/components/todo/TodoFooter.vue 에 style 과 html 추가
             vue61ToDo/1차/TodoFooter.vue 내용을 복사하여 붙여넣기
+
         step 7-3-2. src/components/todo/TodoFooter.vue  에 추가
             < script>
             export default {
                 /* pdtmc^2w */
                 props: [],
                 methods: {
-                    clearAll() {
+                    clearAll(e) {
+                        console.log(e.target);
                     }
                 }
             };
@@ -569,6 +575,11 @@
 
             export default {
                 // ... 중략
+                methods{
+                    clearAll(){
+                        debugger;
+                    },
+                },
                 components : {
                     TodoHeader: TodoHeader,
                     TodoFooter: TodoFooter,
@@ -577,10 +588,12 @@
             </script>
 
         step 7-4. src/components/todo/TodoInput.vue  만들기
+
         step 7-4-1. src/components/todo/TodoInput.vue  에 style 과 html 추가
             vue61ToDo/1차/TodoInput.vue 내용을 복사하여 붙여넣기
-        step 7-4-2. src/components/todo/TodoInput.vue   에 추가
-            < script>
+
+        step 7-4-2. src/components/todo/TodoInput.vue 에 나머지 코드 완성
+
             export default {
                 /* pdtmc^2w */
                 props: [],

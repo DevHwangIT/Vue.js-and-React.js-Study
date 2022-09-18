@@ -111,60 +111,56 @@
 
 </html>
 
-<!-- vue 플러그인 임포트 -->
-<script src="https://unpkg.com/vue@2.7.8/dist/vue.js">    /* vue 플러그인 임포트 */</script>
-<script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js">    /* vuex 플러그인 임포트 */</script>
-<script src="https://unpkg.com/vue-router@3.5.4/dist/vue-router.js">    /* vue 라우터 플러그인 임포트 */</script>
-<script src="https://unpkg.com/axios/dist/axios.min.js">    /* axios 플러그인 임포트 */</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">    /* jQuery 플러그인 임포트 */</script>
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.7.8/dist/vue.js">/* vue 플러그인 임포트 */</script>
 <script>
     new Vue({
         /* edtmc^2w */
         el: '#app',
         data: {
             /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
-            arr: [1, 2, 3, 4, 5]
+            /* data 프로퍼티 값 변경시 this.set(object, key, value) 을 사용 */
+            arr: [1,2,3,4,5],
         },
         //template: ``,
         methods: {
             /* 이벤트 핸들러 등록 + 일반 함수 */
-            change1() {
+            change1(){
                 console.log(window.event.target);
-                this.$set(this.$data.arr,0,100);
-                Vue.set(this.$data.arr,0,110);
-                //this    .$data    .arr[0] = 100;
-            },
-            change2() {
-                console.log(window.event.target);
+                // [100, 2, 3, 4, 5]       <== 방법1을 적용
+                //        this.$data.arr[0] = 100;
+                this.$set(this.$data.arr, '0', 100);
                 console.log(this.$data.arr);
             },
-            change3() {
-                console.log(window.event.target);
-        //         const newArr = this.$data.arr.filter((value, index, array) => {
-        // if (index >= 2) 
-        //     return true;
-        // else 
-        //     false;
-        // }
-    //);
-        const newArr = this.$data.arr.filter(
-        (value, index, array) => (index >= 2)
-            ? true
-            : false
-    );
-    //this.$data.arr=newArr;
-    //this.$data['arr']=newArr;
-this.$set(this.$data, 'arr', newArr);
+            change2(){
+                console.log(event.target);
+                // [100, 300, 3, 4, 5]     <== 방법2을 적용
+                //        this.$data.arr[1] = 300;
+                Vue.set(this.$data.arr , '1' , 300);
+                console.log(this.$data.arr);
             },
-            change4() {
-                console.log(window.event.target);
-                const newArr=[500, ...this.$data.arr, 70];
-                //this.$data.arr=newarr;
-                this.$set(this.$data, 'arr'.newArr);
+            change3(){
+                console.log(event.target);
+                // const newarr = this.$data.arr.filter( (value,index)=>{
+                //     if( index >= 2){
+                //         return true;
+                //     }
+                //     else {
+                //         return false;
+                //     }
+                // });
+                const newarr = this.$data.arr.filter( (value,index)=>( (index >= 2) ? true : false ));
+                //        this.$data.arr = newarr;
+                //        this.$data['arr'] = newarr;
+                this.$set(this.$data, 'arr', newarr)
             },
-            change5() {
-                console.log(window.event.target);
-            }
+            change4(){
+                console.log(event.target);
+                // [500, 3, 4, 5, 70]      <== 방법4을 적용
+                const newarr = [ 500, ...this.$data.arr, 70];
+                //          this.$data.arr  = newarr;
+                this.$set (this.$data, 'arr', newarr);
+            },
         },
         components: {
             /* 전역 컴포넌트는 등록하지 않는다. */
@@ -184,6 +180,8 @@ this.$set(this.$data, 'arr', newArr);
         },
         updated() {
             console.log("updated");
-        }
+        },
     });
+
 </script>
+
