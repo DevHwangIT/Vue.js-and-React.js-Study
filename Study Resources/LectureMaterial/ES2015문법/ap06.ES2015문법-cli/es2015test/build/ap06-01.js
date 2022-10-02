@@ -8,5 +8,3 @@ var getMessage = function getMessage(params) {
 };
 
 getMessage('sejoong');
-var str = "aaaa";
-console.log(str);

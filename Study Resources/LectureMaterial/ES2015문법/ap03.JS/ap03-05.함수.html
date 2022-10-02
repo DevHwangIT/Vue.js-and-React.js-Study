@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>함수 학습 내용</title>
-        <link rel="stylesheet" href="../css/reset.css"/>
+        <link rel="stylesheet" href="../css/reset.css" />
     </head>
 
     <body>
@@ -69,13 +69,13 @@
                                     <pre class="langjs">
                                     <code class="langjs">
     // 생성자 함수는 객체를 만들 때 사용된다.
-    function goo(name, age) {
+    function Goo(name, age) {
         this.name = name;
         this.run = function () {
             return this.name;
         };
     };
-    var goo = new goo('goo', 31);
+    var goo = new Goo('goo', 31);
                                     </code>
                                 </pre>
                                 </td>
@@ -99,20 +99,4 @@
         </div>
     </body>
 </html>
-
-<script>
-    var Dog = {
-        name: "None",
-        weight : 40,
-        Breed : "Mixed",
-        loves : ["Walks", "fetching balls"],
-    }
-
-    var Bulldog = {
-        run() {
-            return "Wal!Wal!";
-        }
-    }
-
-    
-</script>
+
