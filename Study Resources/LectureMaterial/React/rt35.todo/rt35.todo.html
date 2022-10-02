@@ -717,7 +717,7 @@
         <TodoInput></TodoInput>
 
     step 28-04. TodoInput 컴포넌트를 TodoContainer 컴포넌트에 import한다.
-        import TodoInput from './TodoInput';
+        import TodoInput from './components/TodoInput';
 
     step 28-05 TodoInput 컴포넌트 스타일링 작성하기
 
@@ -743,7 +743,7 @@
                             <h3 slot="header">경고</h3>
                         </div>
 
-                        <div className="modal-footer" onClick={handlerShowModal}>
+                        <div className="modal-footer">
                             <span>
                                 할 일을 입력하세요.
                                 <i
@@ -757,7 +757,7 @@
             </div>
         )}
 
-    step 28-08. <div className="modal-footer"> 에 onclick 이벤트를 추가하시오.
+    step 28-08. <div className="modal-footer"> 에 onClick 이벤트를 추가하시오.
         변경전:
         <div className="modal-footer">
             ... 중략
@@ -798,13 +798,13 @@
     step 28-11. refInputTodo 만들기
             const refInputTodo = useRef();
 
-    step 28-12. TodoInput 컴포넌트 JSX 에 onKeyUp 기능 추가
-        input 태그에서 enter 가 입력되면
+    step 28-12. TodoInput 컴포넌트 JSX 의 input 에 onKeyUp 기능 추가
+        input 태그에서 enter 가 입력되었을 때 처리하는 핸들러를 만든다. 
         <input
             type="text"
             placeholder="Type what you have to do"
             ref={refInputTodo}
-            onKeyUp={(e) => (e.keyCode === 13 && handlerAddTodo() )}
+            onKeyUp={(e) => (e.keyCode === 13 && handlerAddTodo(e) )}
         />
 
     step 28-13. TodoInput 컴포넌트 JSX 의 span.addContainer 에 onClick 기능 추가
@@ -816,21 +816,68 @@
         </span>
 
     step 28-14. TodoInput 컴포넌트 handlerAddTodo 메서드 작성
-        // click 이벤트 취소. 버블링 방지
-        // input 에 입력된 값을 가져오기. 어떻게 해야 하나? ==> ref명.current.value
-        // input 태그에 빈 문자열이 입력 되는 경우는 modal 창이 출력되게
-        // TodoContainer 의 callbackAddTodo 메서드 호출 기능 추가
-        // add 후에 input 태그의 입력 값 지우기.
+        cosnt handlerAddTodo = (e) => {
+        
+            // click 이벤트 취소. 버블링 방지
+            e.stopPropagation();
+            
+            // input 에 입력된 값을 가져오기. 어떻게 해야 하나? ==> ref명.current.value
+            const value = refInputTodo.current.value;
+            
+            // input 태그에 빈 문자열이나 공백이 입력 되는 경우는 modal 창이 출력되게
+            if (!value || !value.trim()) {
+              setIsShowModal(true);
+              return; // 함수 실행을 멈춘다.
+            }
+            
+            // TodoContainer 의 callbackAddTodo 메서드 호출 기능 추가
+            callbackAddTodo( value );
+            
+            // add 후에 input 태그의 입력 값 지우기.
+            refInputTodo.current.value = '';
+        }
 
     step 28-15.  TodoContainer 컴포넌트 JSX에 callbackAddTodo props 설정
         <TodoInput callbackAddTodo={callbackAddTodo}>
         </TodoInput>
 
-    step 28-16. TodoContainer 컴포넌트에 callbackAddTodo 메서드 작성
+    step 28-16. TodoInput 컴포넌트에 props 설정
+        function TodoInput({
+          callbackAddTodo
+        }) {
+          ... 이하 중략
+        }
+        TodoInput.propTypes 수정
+        TodoInput.defaultProps 수정
+
+    step 28-17. TodoContainer 컴포넌트 JSX에 callbackAddTodo props 내림 설정
+        <TodoList
+            callbackAddTodo={callbackAddTodo}
+        >
+        </TodoList>
+    
+    step 28-18. TodoContainer 컴포넌트에 callbackAddTodo 메서드 작성
+    
+    const callbackAddTodo = useCallback( (value)=>{
         // ap03-11.객체배열.html 참조
         // map과 reduce 를 사용하여 max id 구하기 ==> newid 만들기
         // todoItems 추가할 객체 만들기
-        // 배열에 추가
+        // 배열에 추가. todoItems = [...todoItems, newTodo];
+        const maxid = todoItems && 
+                    todoItems
+                    .map( (item)=>item.id )
+                    reduce((pvalue,cvalue)=> (pvalue>cvalue ? pvalue: cvalue), 0);
+                    
+        const newTodo = {
+          id: maxid + 1,
+          todo: value,
+          done: false,
+        }
+        
+        setTodoItems( [...todoItems, newTodo] ); // todoItems = [...todoItems, newTodo];
+      },
+      [todoItems]
+    };
 
 
 

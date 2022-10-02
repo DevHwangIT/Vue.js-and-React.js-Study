@@ -80,9 +80,6 @@ https://www.youtube.com/playlist?list=PLI9HGNfZmkoiUNfhJ2nv1TuEaCrxD5zh8
 
   React 관련 프로젝트 Todo List 만들기
 
-
-
-
 --------------------------------------------------------------------------------
 
 개인적으로 궁금한 내용
@@ -100,3 +97,4 @@ https://www.youtube.com/playlist?list=PLI9HGNfZmkoiUNfhJ2nv1TuEaCrxD5zh8
   질문 ) 영상에 대해서 다양한 해상도를 파일로 미리 웹서버에 올려놓고, 현재 대역폭에 맞춰서 적합한 파일을 쪼개서 로드하는 형태로 구성하는걸까?
   --> 해상도에 맞춰서는 잘모르겠다.
 
+  질문 ) 안쓰는 데이터를 로컬에 저장하나요? 
